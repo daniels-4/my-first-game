@@ -24,6 +24,8 @@ size = Vector2(14, 17)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(72, 72)
 script = ExtResource("1_v0fdo")
+JUMP_RELEASE_PEAK = -150.0
+JUMP_RETURN_GRAVITY = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s87we")

@@ -28,3 +28,5 @@ position = Vector2(135, 108)
 
 [node name="Player" parent="." instance=ExtResource("2_8nesh")]
 position = Vector2(117, 63)
+JUMP_RELEASE_PEAK = -150.0
+JUMP_RETURN_GRAVITY = 5.0
