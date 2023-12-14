@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgl7idtd634p5"]
+[gd_scene load_steps=3 format=3 uid="uid://dgl7idtd634p5"]
 
 [ext_resource type="PackedScene" uid="uid://dry4jpq2uyvk5" path="res://block.tscn" id="1_jht0a"]
+[ext_resource type="PackedScene" uid="uid://dsosr0llcc46" path="res://player.tscn" id="2_8nesh"]
 
 [node name="World" type="Node2D"]
 
@@ -10,6 +11,12 @@ position = Vector2(117, 108)
 [node name="Block3" parent="." instance=ExtResource("1_jht0a")]
 position = Vector2(189, 108)
 
+[node name="Block6" parent="." instance=ExtResource("1_jht0a")]
+position = Vector2(189, 90)
+
+[node name="Block7" parent="." instance=ExtResource("1_jht0a")]
+position = Vector2(189, 72)
+
 [node name="Block4" parent="." instance=ExtResource("1_jht0a")]
 position = Vector2(171, 108)
 
@@ -18,3 +25,6 @@ position = Vector2(153, 108)
 
 [node name="Block2" parent="." instance=ExtResource("1_jht0a")]
 position = Vector2(135, 108)
+
+[node name="Player" parent="." instance=ExtResource("2_8nesh")]
+position = Vector2(117, 63)
