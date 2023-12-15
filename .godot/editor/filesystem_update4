@@ -1,4 +1,6 @@
-res://world.tscn
-res://block.tscn
 res://player.tscn
 res://player.gd
+res://world.tscn
+res://block.tscn
+res://PlayerPinkSkin.tres
+res://PlayerTanSkin.tres

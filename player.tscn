@@ -1,22 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsosr0llcc46"]
+[gd_scene load_steps=4 format=3 uid="uid://dsosr0llcc46"]
 
-[ext_resource type="Texture2D" uid="uid://bcxyvannkk7vs" path="res://tilemap-characters_packed.png" id="1_krv63"]
 [ext_resource type="Script" path="res://player.gd" id="1_v0fdo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjy7k"]
-atlas = ExtResource("1_krv63")
-region = Rect2(96, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s87we"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjy7k")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://cc7pmy50nfckn" path="res://PlayerSandSkin.tres" id="2_b4wtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os8e5"]
 size = Vector2(14, 17)
@@ -24,12 +9,11 @@ size = Vector2(14, 17)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(72, 72)
 script = ExtResource("1_v0fdo")
-JUMP_RELEASE_PEAK = -150.0
-JUMP_RETURN_GRAVITY = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_s87we")
-animation = &"idle"
+sprite_frames = ExtResource("2_b4wtv")
+animation = &"run"
+autoplay = "run"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
