@@ -1,9 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
-
-const SPEED = 200.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-const TERMINAL_VELOCITY = 700
+const TERMINAL_VELOCITY = 500
 @export var JUMP_RELEASE_PEAK: int = -150.0
 @export var JUMP_RETURN_GRAVITY: int = 5.0
 
@@ -18,6 +18,8 @@ func _ready():
 func _physics_process(delta):
 	apply_gravity(delta)
 	jump_handler()
+	if Input.is_action_just_pressed("level_reset"):
+		get_tree().reload_current_scene()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")

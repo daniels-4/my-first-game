@@ -1,7 +1,8 @@
-res://player.tscn
-res://player.gd
+res://PlayerSandSkin.tres
 res://world.tscn
 res://block.tscn
-res://PlayerPinkSkin.tres
-res://PlayerTanSkin.tres
+res://player.tscn
 res://tile_map.tscn
+res://spikes.tscn
+res://spikes.gd
+res://player.gd

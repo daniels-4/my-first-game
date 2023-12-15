@@ -19,3 +19,8 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_os8e5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(50, 0)
+zoom = Vector2(2, 2)
+process_callback = 0
