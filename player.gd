@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
+const TERMINAL_VELOCITY = 700
 @export var JUMP_RELEASE_PEAK: int = -150.0
 @export var JUMP_RETURN_GRAVITY: int = 5.0
 
@@ -38,6 +39,7 @@ func _physics_process(delta):
 func apply_gravity(frame):
 	if not is_on_floor():
 		velocity.y += gravity * frame
+		velocity.y = min(velocity.y, TERMINAL_VELOCITY)
 		
 func jump_handler():
 	if is_on_floor():
