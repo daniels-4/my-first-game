@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -325.0
 const TERMINAL_VELOCITY = 500
 @export var JUMP_RELEASE_PEAK: int = -150.0
 @export var JUMP_RETURN_GRAVITY: int = 5.0

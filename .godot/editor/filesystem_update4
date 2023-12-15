@@ -6,3 +6,6 @@ res://tile_map.tscn
 res://spikes.tscn
 res://spikes.gd
 res://player.gd
+res://world.gd
+res://walking_enemy.tscn
+res://walking_enemy.gd
