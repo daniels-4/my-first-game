@@ -7,10 +7,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1 # right
 
 @onready var animatedSprite = $AnimatedSprite2D
+@onready var ledgeCheckRight = $LedgeCheckRight
+@onready var ledgeCheckLeft = $LedgeCheckLeft
 
 func _physics_process(delta):
 	var on_wall = is_on_wall()
-	if on_wall:
+	var on_ledge = not ledgeCheckRight.is_colliding() or not ledgeCheckLeft.is_colliding()
+	if on_wall or on_ledge:
 		direction *= -1
 	face_flip(direction)
 	apply_gravity(delta)

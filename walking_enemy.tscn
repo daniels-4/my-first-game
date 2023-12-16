@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(22, 20)
 
 [node name="WalkingEnemy" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_h8wtj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -39,3 +40,11 @@ animation = &"walking"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_2auwf")
+
+[node name="LedgeCheckRight" type="RayCast2D" parent="."]
+position = Vector2(10, -1)
+target_position = Vector2(0, 6)
+
+[node name="LedgeCheckLeft" type="RayCast2D" parent="."]
+position = Vector2(-10, -1)
+target_position = Vector2(0, 6)

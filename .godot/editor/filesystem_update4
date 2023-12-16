@@ -1,11 +1,7 @@
-res://PlayerSandSkin.tres
 res://world.tscn
-res://block.tscn
-res://player.tscn
-res://tile_map.tscn
+res://PlayerSandSkin.tres
 res://spikes.tscn
-res://spikes.gd
-res://player.gd
-res://world.gd
+res://player.tscn
 res://walking_enemy.tscn
 res://walking_enemy.gd
+res://tile_map.tscn
