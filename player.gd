@@ -27,9 +27,9 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		animatedSprite.animation = "run"
 		if direction > 0:
-			player_face_flip(true)
+			face_flip(true)
 		if direction < 0:
-			player_face_flip(false)
+			face_flip(false)
 		else:
 			pass
 	else:
@@ -54,5 +54,5 @@ func jump_handler():
 		if velocity.y > 0:
 			velocity.y += JUMP_RETURN_GRAVITY
 			
-func player_face_flip(flip):
+func face_flip(flip):
 	animatedSprite.flip_h = flip
