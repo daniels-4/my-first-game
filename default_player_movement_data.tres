@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerMovementTable" load_steps=2 format=3 uid="uid://dca1nhjdgvu26"]
+
+[ext_resource type="Script" path="res://player_movement_data.gd" id="1_o6fsf"]
+
+[resource]
+script = ExtResource("1_o6fsf")
+SPEED = 150
+JUMP_VELOCITY = -325
+TERMINAL_VELOCITY = 500
+JUMP_RELEASE_PEAK = -150
+JUMP_RETURN_GRAVITY = 5

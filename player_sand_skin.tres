@@ -1,21 +1,21 @@
 [gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cc7pmy50nfckn"]
 
-[ext_resource type="Texture2D" uid="uid://bcxyvannkk7vs" path="res://tilemap-characters_packed.png" id="1_04ib4"]
+[ext_resource type="Texture2D" uid="uid://bcxyvannkk7vs" path="res://tilemap-characters_packed.png" id="1_gcgou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3m0kn"]
-atlas = ExtResource("1_04ib4")
+atlas = ExtResource("1_gcgou")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ojuv"]
-atlas = ExtResource("1_04ib4")
+atlas = ExtResource("1_gcgou")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcg0q"]
-atlas = ExtResource("1_04ib4")
+atlas = ExtResource("1_gcgou")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn1p3"]
-atlas = ExtResource("1_04ib4")
+atlas = ExtResource("1_gcgou")
 region = Rect2(0, 24, 24, 24)
 
 [resource]
