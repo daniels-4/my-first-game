@@ -30,6 +30,6 @@ process_callback = 0
 
 [node name="LadderCheck" type="RayCast2D" parent="."]
 position = Vector2(0, -4)
-target_position = Vector2(0, 22)
+target_position = Vector2(0, 21)
 collide_with_areas = true
 collide_with_bodies = false
