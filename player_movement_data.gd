@@ -7,3 +7,4 @@ class_name PlayerMovementData
 @export var JUMP_RELEASE_PEAK: int = -150.0
 @export var JUMP_RETURN_GRAVITY: int = 5.0
 @export var CLIMB_SPEED: int = 100.0
+@export var JUMP_COUNT: int = 1

@@ -1,12 +1,9 @@
+res://player.tscn
 res://player_sand_skin.tres
-res://ladder.tscn
+res://player.gd
 res://world.tscn
-res://walking_enemy.tscn
 res://spikes.tscn
 res://hitbox.tscn
-res://player.tscn
 res://tile_map.tscn
-res://ladder.gd
-res://player.gd
+res://ladder.tscn
 res://player_movement_data.gd
-res://default_player_movement_data.tres

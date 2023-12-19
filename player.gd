@@ -9,9 +9,14 @@ enum {
 @export var move_data = Resource
 
 var state = MOVE_STATE
+var jump_count = 1
+var buffered_jump = false
+var coyote_buffer = false
 
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var ladderCheck = $LadderCheck
+@onready var jumpBufferTimer = $JumpBufferTimer
+@onready var coyoteJumpTimer = $CoyoteJumpTimer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -47,8 +52,13 @@ func move_state(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_data.SPEED)
 		animatedSprite.animation = "idle"
-
+		
+	var was_on_floor = is_on_floor()
 	move_and_slide()
+	var coyote_jump = not is_on_floor() and was_on_floor
+	if coyote_jump and velocity.y >= 0:
+		coyote_buffer = true
+		coyoteJumpTimer.start()
 	
 func climb_state():
 	reset_check()
@@ -62,6 +72,11 @@ func climb_state():
 	velocity.y = direction * move_data.CLIMB_SPEED
 	move_and_slide()
 	
+func input_jump():
+	if Input.is_action_just_pressed("ui_accept") or buffered_jump:
+		velocity.y = move_data.JUMP_VELOCITY
+		buffered_jump = false
+
 func is_on_ladder():
 	if not ladderCheck.is_colliding(): return false
 	var valid_ladder = ladderCheck.get_collider()
@@ -75,14 +90,33 @@ func apply_gravity(frame):
 		
 func jump_handler():
 	if is_on_floor():
-		if Input.is_action_just_pressed("ui_accept"):
-			velocity.y = move_data.JUMP_VELOCITY
+		jump_count_reset()
+	if can_jump():
+		input_jump()
 	else:
 		animatedSprite.animation = "jump"
 		if Input.is_action_just_released("ui_accept") and velocity.y < move_data.JUMP_RELEASE_PEAK:
 			velocity.y = move_data.JUMP_RELEASE_PEAK
+		if Input.is_action_just_pressed("ui_accept") and jump_count > 1:
+			velocity.y = move_data.JUMP_VELOCITY
+			jump_count -= 1
+		if Input.is_action_just_pressed("ui_accept"):
+			buffered_jump = true
+			jumpBufferTimer.start()
 		if velocity.y > 0:
 			velocity.y += move_data.JUMP_RETURN_GRAVITY
 			
 func face_flip(flip):
 	animatedSprite.flip_h = flip
+
+func jump_count_reset():
+	jump_count = move_data.JUMP_COUNT
+
+func can_jump():
+	return is_on_floor() or coyote_buffer
+
+func _on_jump_buffer_timer_timeout():
+	buffered_jump = false
+
+func _on_coyote_jump_timer_timeout():
+	coyote_buffer = false
