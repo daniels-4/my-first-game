@@ -1,10 +1,13 @@
-Timer
-RayCast2D
+AnimationPlayer
+Node2D
 CollisionShape2D
 Sprite2D
 Area2D
+PathFollow2D
+Path2D
+Timer
+RayCast2D
 CollisionPolygon2D
-Node2D
 AnimatedSprite2D
 CharacterBody2D
 Camera2D
