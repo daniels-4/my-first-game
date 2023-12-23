@@ -72,8 +72,13 @@ func climb_state():
 	velocity.y = direction * move_data.CLIMB_SPEED
 	move_and_slide()
 	
+func player_death():
+	SoundPlayer.play_sound(SoundPlayer.HURT)
+	get_tree().reload_current_scene()
+	
 func input_jump():
 	if Input.is_action_just_pressed("ui_accept") or buffered_jump:
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
 		velocity.y = move_data.JUMP_VELOCITY
 		buffered_jump = false
 
@@ -98,6 +103,7 @@ func jump_handler():
 		if Input.is_action_just_released("ui_accept") and velocity.y < move_data.JUMP_RELEASE_PEAK:
 			velocity.y = move_data.JUMP_RELEASE_PEAK
 		if Input.is_action_just_pressed("ui_accept") and jump_count > 1:
+			SoundPlayer.play_sound(SoundPlayer.JUMP)
 			velocity.y = move_data.JUMP_VELOCITY
 			jump_count -= 1
 		if Input.is_action_just_pressed("ui_accept"):
