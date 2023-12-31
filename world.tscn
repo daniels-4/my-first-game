@@ -72,3 +72,8 @@ position = Vector2(198, 234)
 [node name="MovingEnemyPath" parent="." instance=ExtResource("7_u8vip")]
 position = Vector2(765, 207)
 curve = SubResource("Curve2D_ro6gs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(50, 0)
+zoom = Vector2(2, 2)
+process_callback = 0

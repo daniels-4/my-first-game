@@ -17,6 +17,7 @@ var coyote_buffer = false
 @onready var ladderCheck = $LadderCheck
 @onready var jumpBufferTimer = $JumpBufferTimer
 @onready var coyoteJumpTimer = $CoyoteJumpTimer
+@onready var remoteTransform2D = $RemoteTransform2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -74,7 +75,8 @@ func climb_state():
 	
 func player_death():
 	SoundPlayer.play_sound(SoundPlayer.HURT)
-	get_tree().reload_current_scene()
+	queue_free()
+	events.emit("player_death_event")
 	
 func input_jump():
 	if Input.is_action_just_pressed("ui_accept") or buffered_jump:
@@ -126,3 +128,7 @@ func _on_jump_buffer_timer_timeout():
 
 func _on_coyote_jump_timer_timeout():
 	coyote_buffer = false
+
+func connect_camera(camera):
+	var cameraPath = camera.get_path()
+	remoteTransform2D.remote_path = cameraPath

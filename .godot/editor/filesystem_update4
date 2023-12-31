@@ -1,10 +1,10 @@
-res://world.tscn
+res://player.tscn
 res://player_sand_skin.tres
+res://player.gd
+res://world.tscn
 res://spikes.tscn
 res://hitbox.tscn
-res://player.tscn
 res://moving_enemy_path.tscn
 res://Sounds/sound_player.tscn
-res://Sounds/sound_player.gd
-res://player.gd
-res://hitbox.gd
+res://world.gd
+res://events.gd
